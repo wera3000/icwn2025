@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>License Download</title>
+</head>
+<body>
+  <h2>🔍 Enter License ID</h2>
+  <input type="text" id="licenseInput" placeholder="Enter License ID">
+  <button onclick="findLicense()">Find</button>
+
+  <div id="result" style="margin-top:20px;"></div>
+
+  <script>
+    const licenseData = {"6711349162": "https://drive.google.com/file/d/1iG-PJzdx1l9T1B9Xl", "4611103183": "https://drive.google.com/file/d/1fEtmAn_R13gp7kdk", "4811189734": "https://drive.google.com/file/d/1VkT6OfrjBKrjTfXl"};
+
+    function findLicense() {
+      const input = document.getElementById("licenseInput").value.trim();
+      const resultDiv = document.getElementById("result");
+      if (licenseData[input]) {
+        resultDiv.innerHTML = `<p>✅ Found! <a href="${licenseData[input]}" target="_blank">Click here to download</a></p>`;
+      } else {
+        resultDiv.innerHTML = `<p style="color:red;">❌ License ID not found.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
